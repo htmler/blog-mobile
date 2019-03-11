@@ -1,0 +1,36 @@
+.discuss-single-container{
+    min-height: 1.5rem;
+    width: 100%;
+    background-color: #f0f8ff;
+    box-sizing: border-box;
+    padding: 0.2rem;
+    font-size: 0.24rem;
+    display: flex;
+    justify-content: flex-start;
+    .container-left{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    .container-right{
+        margin-left: 0.2rem;
+        .right-top{
+            .top-name{
+                color: #04ac71;
+            }
+            .top-time{
+                padding-left: 0.2rem;
+            }
+        }
+        .right-content{
+            word-break: break-all;
+            overflow: hidden;
+        }
+    }
+}

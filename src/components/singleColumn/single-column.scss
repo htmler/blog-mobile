@@ -1,0 +1,24 @@
+.column-container{
+    width: 45%;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid #04ac71;
+    box-sizing: border-box;
+    .container-header{
+        height: 2rem;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .container-info{
+        font-size: 0.24rem;
+        box-sizing: border-box;
+        padding: 0.1rem 0.2rem;
+        background-color: #fff;
+        .info-title{
+            font-size: 0.28rem;
+            font-weight: bold;
+        }
+    }
+}
