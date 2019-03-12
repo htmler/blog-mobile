@@ -12,15 +12,15 @@ class DiscussSingle extends Component {
         return (
             <div className="discuss-single-container">
                 <div className="container-left">
-                  <img src="http://client-cq.oss-cn-beijing.aliyuncs.com/avatar.jpg" alt=""/>
+                  <img src={this.props.item.avatar} alt=""/>
                 </div>
                 <div className="container-right">
                    <div className="right-top">
-                      <span className="top-name">system</span>
-                      <span className="top-time">2019/03/05 10:39:24</span>
+                      <span className="top-name">{this.props.item.username}</span>
+                      <span className="top-time">{this.props.item.createTime}</span>
                    </div>
                    <div className="right-content">
-                      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                      {this.props.item.content}
                    </div>
                 </div>
             </div>

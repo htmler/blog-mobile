@@ -12,7 +12,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  width: 100%;
+  font-size: 0.26rem;
 }
 a{
   color: #000;
+}
+img{
+  max-width: 100%;
+}
+pre {
+  padding: 0.3rem;
+  background: #F3F3F3;
+  overflow: auto;
+  line-height: 1.45;
+  box-sizing: border-box;
+  text-align: left;
 }

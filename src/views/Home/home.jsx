@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {server} from '../../providers/http-servide';
 import { Layout } from 'antd';
 import './home.scss';
 import Banner from '../../components/banner/banner'
@@ -7,16 +8,32 @@ import NavBar from '../../components/navBar/nav-bar'
 import { withRouter } from 'react-router-dom';
 import { element } from 'prop-types';
 const {
-  Header, Footer, Content,
+  Header, Content,
 } = Layout;
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arr:[1,2,3,4,5,6,7]
+      arr:[],
+      columnObj:[]
     };
   }
-
+  componentWillMount(){
+    server.getHomeBanner().then(obj=>{
+      this.setState({
+        arr:obj
+      })
+    })
+    let params = {
+      tag: 'frame'
+    };
+    server.getHomeList(params).then(obj => {
+      console.log(obj)
+      this.setState({
+        columnObj:obj
+      })
+    });
+  }
   componentDidMount() {
   }
   toggle() {
@@ -27,17 +44,16 @@ class Home extends Component {
         <Header className="body-header">
           <div className="header-left" onClick={() => { this.toggle() }}></div>
           <div className="header-center">CQshare</div>
-          <div className="header-right">aa</div>
+          <div className="header-right"></div>
         </Header>
         <Content className="body-content">
-          <Banner />
+          <Banner num = {this.state.arr}/>
           <div className="column-body">
-             {this.state.arr.map((element,index) =>{
-               return <SingleColumn key={index}/>
+             {this.state.columnObj.map((element,index) =>{
+               return <SingleColumn key={index} item={element}/>
              })}
           </div>
         </Content>
-        <Footer>Footer</Footer>
         <NavBar type="home"/>
       </Layout>
     );
